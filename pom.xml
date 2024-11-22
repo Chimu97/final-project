@@ -15,18 +15,27 @@
     </properties>
 
     <dependencies>
-        <dependency>    <groupId>org.seleniumhq.selenium</groupId>
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.25.0</version></dependency><dependency>
-        <groupId>org.junit.jupiter</groupId>    <artifactId>junit-jupiter</artifactId>
-        <version>5.11.2</version>
-        <scope>test</scope></dependency>
-        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+            <version>4.25.0</version>
+        </dependency>
+
+        <!-- JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.11.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Rest-Assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.5.0</version>
-            <scope>test</scope></dependency>
-
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>

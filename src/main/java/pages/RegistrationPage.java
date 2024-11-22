@@ -49,6 +49,11 @@ public class RegistrationPage {
         private By userPasswordFieldError = By.id("customer.password.errors");
         private By userConfirmPasswordFieldError = By.id("repeatedPassword.errors");
 
+        // Locators para el login
+        private By usernameLoginField = By.cssSelector("#loginPanel input[name='username']");
+        private By passwordLoginField = By.cssSelector("#loginPanel input[name='password']");
+        private By loginButton = By.cssSelector("#loginPanel input.button");
+
 
         // Metodos para interactuar con el formulario
         public void setFirstName(String firstName) {
@@ -153,6 +158,19 @@ public class RegistrationPage {
             return driver.findElement(locator).getText();
         }
 
+        // Métodos para interactuar con el formulario de login
+        public void enterUsernameForLogin(String username) {
+            driver.findElement(usernameLoginField).sendKeys(username);
+        }
+
+        public void enterPasswordForLogin(String password) {
+            driver.findElement(passwordLoginField).sendKeys(password);
+        }
+
+        public void clickLoginButton() {
+            driver.findElement(loginButton).click();
+        }
+
 
     // Metodo para registrar un usuario. El metodo (registerUser) actua singularmente para llenar todos los campos
     // del registro en una sola accion.
@@ -174,4 +192,10 @@ public class RegistrationPage {
         setConfirmPassword(confirmPassword);
         clickRegisterButton();
     }
+        // Metodo para loguear
+        public void loginUser(String username, String password) {
+            enterUsernameForLogin(username);
+            enterPasswordForLogin(password);
+            clickLoginButton();
+        }
 }
